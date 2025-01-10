@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Leetcode2Git",
+    "version": "1.0",
+    "permissions": [
+        "contextMenus",
+        "activeTab",
+        "scripting"
+    ],
+    "background" : {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://leetcode.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "host_permissions": [
+        "https://api.github.com/repos/*"
+    ]
+}
